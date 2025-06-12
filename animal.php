@@ -9,9 +9,12 @@
 // samgue freddo o caldo
 
 class Animal {
-  public function __construct() {}
+  public function __construct() 
+  {
+    $this->Animaldescription();
+  }
 
-  protected function description() {
+  protected function Animaldescription() {
     echo "Sono un animale\n";
   }
 }
@@ -19,10 +22,10 @@ class Animal {
 class Vertebrate extends Animal {
   public function __construct() {
     parent::__construct();
+    $this->Vertebratedescription();
   }
 
-  protected function description() {
-    parent::description();
+  protected function Vertebratedescription() {
     echo "Sono un animale Vertebrato\n";
   }
 }
@@ -30,10 +33,10 @@ class Vertebrate extends Animal {
 class WarmBlooded extends Vertebrate {
   public function __construct() {
     parent::__construct();
+    $this->WarmBloodeddescription();
   }
 
-  protected function description() {
-    parent::description();
+  protected function WarmBloodeddescription() {
     echo "Ho il sangue caldo.\n";
   }
 }
@@ -41,10 +44,10 @@ class WarmBlooded extends Vertebrate {
 class ColdBlooded extends Vertebrate {
   public function __construct() {
     parent::__construct();
+    $this->ColdBloodeddescription();
   }
 
-  protected function description() {
-    parent::description();
+  protected function ColdBloodeddescription() {
     echo "Ho il sangue freddo.\n";
   }
 }
@@ -52,11 +55,10 @@ class ColdBlooded extends Vertebrate {
 class Fish extends ColdBlooded {
   public function __construct() {
     parent::__construct();
-    $this->description(); 
+    $this->Fishdescription(); 
   }
 
-  protected function description() {
-    parent::description();
+  protected function Fishdescription() {
     echo "Sono un pesce\n";
   }
 }
@@ -64,11 +66,10 @@ class Fish extends ColdBlooded {
 class Mammal extends WarmBlooded {
   public function __construct() {
     parent::__construct();
-    $this->description(); 
+    $this->Mammaldescription(); 
   }
 
-  protected function description() {
-    parent::description();
+  protected function Mammaldescription() {
     echo "Sono un mammifero\n";
   }
 }
