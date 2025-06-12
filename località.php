@@ -17,10 +17,6 @@ class Continent{
   {
     $this->nameContinent = $a;
   }
-  public function location()
-  {
-    echo "Io mi trovo in $this->nameContinent. \n";
-  }
 }
 
 class Country extends Continent
@@ -31,10 +27,6 @@ class Country extends Continent
   {
     parent::__construct($a);
     $this->nameCountry = $b;
-  }
-  public function location()
-  {
-    echo "Io mi trovo in $this->nameContinent, nello stato dell' $this->nameCountry.\n ";
   }
 }
 
@@ -47,11 +39,6 @@ class Region extends Country
     parent::__construct($a, $b);
     $this->nameRegion = $c;
   }
-
-  public function location()
-  {
-    echo "Io mi trovo nella regione $this->nameRegion, nello stato dell' $this->nameCountry, in $this->nameContinent.\n";
-  }
 }
 
 class Province extends Region
@@ -63,11 +50,6 @@ class Province extends Region
     parent::__construct($a, $b, $c);
     $this->nameProvince = $d;
   }
-
-  public function location()
-  {
-    echo "Io mi trovo nella provincia di $this->nameProvince, regione $this->nameRegion, stato $this->nameCountry, in $this->nameContinent.\n";
-  }
 }
 
 class City extends Province
@@ -78,11 +60,6 @@ class City extends Province
   {
     parent::__construct($a, $b, $c, $d);
     $this->nameCity = $e;
-  }
-
-  public function location()
-  {
-    echo "Io mi trovo nella città di $this->nameCity, provincia $this->nameProvince, regione $this->nameRegion, stato $this->nameCountry, in $this->nameContinent.\n";
   }
 }
 
@@ -98,19 +75,14 @@ class Street extends City
 
   public function location()
   {
-    echo "Io mi trovo in via $this->nameStreet, città $this->nameCity, provincia $this->nameProvince, regione $this->nameRegion, stato $this->nameCountry, in $this->nameContinent.\n";
+    echo "I miei genitori sono cresciuti in via $this->nameStreet, città $this->nameCity, provincia $this->nameProvince, regione $this->nameRegion, stato $this->nameCountry, in $this->nameContinent.\n";
   }
 }
 
-$lvl1 = new Continent('Sud-America');
-$lvl2 = new Country('Sud-America','Ecuador');
-$lvl3 = new Region('Sud-America','Ecuador','La Costa');
-$lvl4= new Province('Sud-America','Ecuador','La Costa','Santo Domingo de los Tsáchilas');
-$lvl5 = new City('Sud-America','Ecuador','La costa','Santo Domingo de los Tsáchilas','Concordia');
-$lvl6 = new Street('Sud-America','Ecuador','La costa','Santo Domingo de los Tsáchilas','Concordia','Boh');
+$frase = new Street('Sud-America','Ecuador','La costa','Santo Domingo de los Tsáchilas','Concordia','Boh');
 
 //Non ho idea di come si chiamano le strade in Ecuador.
 
-$lvl6->location();
+$frase->location();
 
 
