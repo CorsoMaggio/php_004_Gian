@@ -8,93 +8,70 @@
 // vert-class o invert-class
 // samgue freddo o caldo
 
-
 class Animal {
-  public function __construct() {
-    $this->description();
-  }
+  public function __construct() {}
 
   protected function description() {
+    echo "Sono un animale\n";
   }
 }
 
 class Vertebrate extends Animal {
-    protected function description() {
-        parent::description();
-        echo "Sono un animale Vertebrato\n";
-    }
+  public function __construct() {
+    parent::__construct();
+  }
+
+  protected function description() {
+    parent::description();
+    echo "Sono un animale Vertebrato\n";
+  }
 }
 
-class Invertebrate extends Animal {
-    protected function description() {
-        parent::description();
-        echo "Sono un animale Invertebrato\n";
-    }
-}
- class WarmBlooded extends Vertebrate {
-    protected function description() {
-        parent::description();
-        echo "Sono un animale a Sangue Caldo\n";
-    }
+class WarmBlooded extends Vertebrate {
+  public function __construct() {
+    parent::__construct();
+  }
+
+  protected function description() {
+    parent::description();
+    echo "Ho il sangue caldo.\n";
+  }
 }
 
 class ColdBlooded extends Vertebrate {
-    protected function description() {
-        parent::description();
-        echo "Sono un animale a Sangue Freddo\n";
-    }
+  public function __construct() {
+    parent::__construct();
+  }
+
+  protected function description() {
+    parent::description();
+    echo "Ho il sangue freddo.\n";
+  }
 }
 
 class Fish extends ColdBlooded {
-    protected function description() {
-        parent::description();
-        echo "Sono un pesce.\n";
-        echo "Splash!\n";
-    }
-}
+  public function __construct() {
+    parent::__construct();
+    $this->description(); 
+  }
 
-class Reptile extends ColdBlooded {
-    protected function description() {
-        parent::description();
-        echo "Sono un Serpente\n";
-    }
-}
-
-class Bird extends WarmBlooded {
-    protected function description() {
-        parent::description();
-        echo "Sono un Uccello\n";
-    }
+  protected function description() {
+    parent::description();
+    echo "Sono un pesce\n";
+  }
 }
 
 class Mammal extends WarmBlooded {
-    protected function description() {
-        parent::description();
-        echo "Sono un Mammifero\n";
-    }
+  public function __construct() {
+    parent::__construct();
+    $this->description(); 
+  }
+
+  protected function description() {
+    parent::description();
+    echo "Sono un mammifero\n";
+  }
 }
 
-class Spider extends Invertebrate {
-    protected function description() {
-        parent::description();
-        echo "Sono un Ragno\n";
-    }
-}
-
-class Worm extends Invertebrate {
-    protected function description() {
-        parent::description();
-        echo "Sono un Verme\n";
-    }
-}
-
-
-$salmone = new Fish();
-
-$Boa = new Reptile();
-
-$pellicano = new Bird();
-
-$ragnoViolino = new Spider();
-
+$merluzzo = new Fish();
 $ornitorinco = new Mammal();
