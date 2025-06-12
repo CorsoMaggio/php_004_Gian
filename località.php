@@ -109,6 +109,7 @@ $lvl4= new Province('Sud-America','Ecuador','La Costa','Santo Domingo de los Ts�
 $lvl5 = new City('Sud-America','Ecuador','La costa','Santo Domingo de los Tsáchilas','Concordia');
 $lvl6 = new Street('Sud-America','Ecuador','La costa','Santo Domingo de los Tsáchilas','Concordia','Boh');
 
+//Non ho idea di come si chiamano le strade in Ecuador.
 
 $lvl6->location();
 
