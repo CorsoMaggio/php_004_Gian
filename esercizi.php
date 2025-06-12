@@ -13,12 +13,30 @@ Creare una classe Azienda(Company) che abbia gli attributi public:
 Definire la funzione__consyruct() come visto a lezione per prendere in input 3 atttributi.
 */
 
-echo "Inserisci il nome dell'azienda: ";
-$name = trim(fgets(STDIN));
-echo "Inserisci lo stato dell'azienda: ";
-$companyState = trim(fgets(STDIN));
-echo "Inserisci il totale dei dipendenti dell'azienda: ";
-$totEmployes = trim(fgets(STDIN));
+$companies = [];
+
+do {
+    echo "Inserisci il nome dell'azienda: ";
+    $name = trim(fgets(STDIN));
+
+    echo "Inserisci lo stato dell'azienda: ";
+    $companyState = trim(fgets(STDIN));
+
+    do {
+        echo "Inserisci il totale dei dipendenti dell'azienda: ";
+        $totEmployes = trim(fgets(STDIN));
+    } while (!is_numeric($totEmployes) || (int)$totEmployes < 0);
+
+    $companies[] = new Company($name, $companyState, (int)$totEmployes);
+
+    echo "Vuoi inserire un'altra azienda? (si/no): ";
+    $continua = strtolower(trim(fgets(STDIN)));
+
+} while ($continua === 'si');
+
+foreach ($companies as $company) {
+    $company->acquistionMessage();
+}
 
 class Company 
 {
@@ -52,8 +70,7 @@ $Company2 = new Company('Barilla', 'ITA' , 3);
 $Company3 = new Company('Nintendo', 'JAP');//Istalziare una nuova classe
 $Company4 = new Company('Nokia', 'FIN' , 10);//Istalziare una nuova classe
 $Company5 = new Company('Xiaomi', 'CHI' , 3);//Istalziare una nuova classe
-$Company5 = new Company('Xiaomi', 'CHI' , 3);//Istalziare una nuova classe
-$Company5 = new Company($name, $companyState , $totEmployes);//Istalziare una nuova classe
+
 
 // var_dump($Company1,$Company2,$Company3,$Company4,$Company5);
 
