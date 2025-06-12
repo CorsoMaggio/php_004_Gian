@@ -46,7 +46,7 @@ class Company
   public string $companyState;
   public int $totEmployes;
 
-  public function __construct($name,$companyState,$totEmployes=0)
+  public function __construct($name,$companyState,$totEmployes=0 && is_numeric($totEmployes))
   {
     $this->name = $name;
     $this->companyState = $companyState;
@@ -54,9 +54,12 @@ class Company
   }
   public function acquistionMessage()
   {
-    if ($this->totEmployes > 0){
+    if ($this->totEmployes > 0 ){
      echo "L' ufficio $this->name con sede in $this->companyState ha ben $this->totEmployes dipendenti. \n";
-    } else {
+    /*} elseif (!is_numeric($this->totEmployes)) {
+      echo  "Devi inserire un numero.";*/
+    }
+      else {
         echo "L' ufficio $this->name con sede in $this->companyState non ha dipendenti. \n";
     }
   }
