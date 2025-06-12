@@ -9,6 +9,85 @@
 // samgue freddo o caldo
 
 
+class Animal {
+  public function __construct() {
+    $this->description();
+  }
+
+  protected function description() {
+  }
+}
+
+class Vertebrate extends Animal {
+    protected function description() {
+        parent::description();
+        echo "Sono un animale Vertebrato\n";
+    }
+}
+
+class Invertebrate extends Animal {
+    protected function description() {
+        parent::description();
+        echo "Sono un animale Invertebrato\n";
+    }
+}
+ class WarmBlooded extends Vertebrate {
+    protected function description() {
+        parent::description();
+        echo "Sono un animale a Sangue Caldo\n";
+    }
+}
+
+class ColdBlooded extends Vertebrate {
+    protected function description() {
+        parent::description();
+        echo "Sono un animale a Sangue Freddo\n";
+    }
+}
+
+class Fish extends ColdBlooded {
+    protected function description() {
+        parent::description();
+        echo "Sono un pesce.\n";
+        echo "Splash!\n";
+    }
+}
+
+class Reptile extends ColdBlooded {
+    protected function description() {
+        parent::description();
+        echo "Sono un Serpente\n";
+    }
+}
+
+class Bird extends WarmBlooded {
+    protected function description() {
+        parent::description();
+        echo "Sono un Uccello\n";
+    }
+}
+
+class Mammal extends WarmBlooded {
+    protected function description() {
+        parent::description();
+        echo "Sono un Mammifero\n";
+    }
+}
+
+class Spider extends Invertebrate {
+    protected function description() {
+        parent::description();
+        echo "Sono un Ragno\n";
+    }
+}
+
+class Worm extends Invertebrate {
+    protected function description() {
+        parent::description();
+        echo "Sono un Verme\n";
+    }
+}
+
 
 $salmone = new Fish();
 
